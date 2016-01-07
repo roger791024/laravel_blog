@@ -11,9 +11,64 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/', ['as' => 'home.index' ,function () {
+    return view('home.index');
+}]);
+
+Route::get('about', ['as' => 'about.index' ,function () {
+    return view('about.about');
+}]);
+
+Route::get('contact', ['as' => 'contact.create' ,function () {
+    return view('contact.contact');
+}]);
+
+Route::get('posts', ['as' => 'posts.index' ,function () {
+    return view('posts.posts');
+}]);
+
+
+
+
+
+
+
+Route::get('random', ['as' => 'posts.random' ,function () {
     return view('welcome');
-});
+}]);
+
+
+Route::post('contact', ['as' => 'contact.store' ,function () {
+    return view('welcome');
+}]);
+
+Route::get('posts/{id}', ['as' => 'posts.show' ,function () {
+    return view('welcome');
+}]);
+
+Route::get('posts/create', ['as' => 'posts.create' ,function () {
+    return view('welcome');
+}]);
+
+Route::post('posts', ['as' => 'posts.store' ,function () {
+    return view('welcome');
+}]);
+
+Route::get('posts/{id}/edit', ['as' => 'posts.edit' ,function () {
+    return view('welcome');
+}]);
+
+Route::patch('posts/{id}', ['as' => 'posts.update' ,function () {
+    return view('welcome');
+}]);
+
+Route::delete('posts/{id}', ['as' => 'posts.destory' ,function () {
+    return view('welcome');
+}]);
+
+Route::post('posts/{id}/comment', ['as' => 'posts.comment' ,function () {
+    return view('welcome');
+}]);
 
 /*
 |--------------------------------------------------------------------------
