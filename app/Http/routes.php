@@ -23,13 +23,15 @@ Route::get('contact', ['as' => 'contact.create' ,function () {
     return view('contact.contact');
 }]);
 
-Route::get('posts', ['as' => 'posts.index' ,function () {
-    return view('posts.posts');
-}]);
 
 
+Route::get('posts', ['as' => 'posts.index' ,'uses' => 'PostsController@index']);
 
+Route::get('posts/create', ['as' => 'posts.create' ,'uses' =>'PostsController@create']);
 
+Route::get('posts/{id}', ['as' => 'posts.show' ,'uses' => 'PostsController@show']);
+
+Route::get('posts/{id}/edit', ['as' => 'posts.edit' ,'uses' => 'PostsController@edit']);
 
 
 
@@ -42,21 +44,14 @@ Route::post('contact', ['as' => 'contact.store' ,function () {
     return view('welcome');
 }]);
 
-Route::get('posts/{id}', ['as' => 'posts.show' ,function () {
-    return view('welcome');
-}]);
 
-Route::get('posts/create', ['as' => 'posts.create' ,function () {
-    return view('welcome');
-}]);
+
+
 
 Route::post('posts', ['as' => 'posts.store' ,function () {
     return view('welcome');
 }]);
 
-Route::get('posts/{id}/edit', ['as' => 'posts.edit' ,function () {
-    return view('welcome');
-}]);
 
 Route::patch('posts/{id}', ['as' => 'posts.update' ,function () {
     return view('welcome');

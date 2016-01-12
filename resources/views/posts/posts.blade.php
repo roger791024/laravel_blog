@@ -17,16 +17,20 @@
                     </h2>
                     <hr>
                 </div>
+
+                @foreach($posts as $post)
                 <div class="col-lg-12 text-center">
                     <img class="img-responsive img-border img-full" src="{{ asset('img/slide-1.jpg') }}" alt="">
-                    <h2>Post Title
+                    <h2>{{ $post->title }}
                         <br>
-                        <small>October 13, 2013</small>
+                        <small>{{ $post->sub_title }}</small>
                     </h2>
-                    <p>Lid est laborum dolo rumes fugats untras. Etharums ser quidem rerum facilis dolores nemis omnis fugats vitaes nemo minima rerums unsers sadips amets. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+                    <p>{!! $post->content !!}</p>
                     <a href="#" class="btn btn-default btn-lg">Read More</a>
                     <hr>
                 </div>
+                @endforeach
+
                 <div class="col-lg-12 text-center">
                     <img class="img-responsive img-border img-full" src="{{ asset('img/slide-2.jpg') }}" alt="">
                     <h2>Post Title
@@ -47,6 +51,7 @@
                     <a href="#" class="btn btn-default btn-lg">Read More</a>
                     <hr>
                 </div>
+
                 <div class="col-lg-12 text-center">
                     <ul class="pager">
                         <li class="previous"><a href="#">&larr; Older</a>
